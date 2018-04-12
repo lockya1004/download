@@ -1,0 +1,16 @@
+ Log.i("checkBox", "Å¬¸¯");
+        try {
+            URL url = new URL("http://www.naver.com");
+            URLConnection con = url.openConnection();
+            BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String str;
+
+            while ((str=br.readLine())!=null) {
+                Log.i("naver",str);
+            }
+            br.close();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }

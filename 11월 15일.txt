@@ -1,0 +1,23 @@
+CREATE TABLE INDEX_EMP
+AS
+SELECT *
+FROM EMP;
+
+SELECT *
+FROM INDEX_EMP
+;
+
+CREATE INDEX idx_emp_sal
+on index_emp(sal asc);
+
+--테이블 명(칼럼 아무것도 없으면 asc, 내림차순이면 desc)를 입력.
+
+select *
+from index_emp
+where sal=1250;
+
+alter index idx_emp_sal monitoring usage; -- 모니터링
+
+select *
+from V$object_usage
+where index_name='IDX_EMP_SAL';
